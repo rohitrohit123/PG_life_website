@@ -1,0 +1,263 @@
+body{
+    padding:0px;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#container{
+    position: absolute; /* height: 100%; */
+    width: 100%;
+    top: 60px; /* Offset by the height of the navbar */
+    height: calc(100% - 60px); /* Adjust height to account for the navbar */
+    margin: 0;
+    padding: 0;
+       
+}
+#searchbar{
+    height: 7%; 
+    width: 50%; /* Make the width responsive */
+    max-width: 500px; /* Ensure it doesn't get too large */
+    min-width: 200px; /* Ensure it doesn't get too small */
+    border: none;
+    position: absolute;
+    top: 50%; /* Vertically center the search bar */
+    left: 50%; /* Horizontally center the search bar */
+    transform: translate(-50%, -50%); /* Adjust for the search bar's dimensions to perfectly center it */
+    z-index: 3; /* Ensure the search bar appears above the text and image */
+    background-color: white; /* Add a background color if needed */
+    display: flex;
+    align-items: center;
+    border-radius: 5px; /* Rounded corners for a cleaner look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+#image{
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+
+}
+#mainimage {
+    width: 100%;
+    position: relative; 
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px; /* Fixed height for the navbar */
+    min-height: 60px; /* Prevent shrinking */
+    max-height: 60px; /* Prevent growing */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#nav-links a {
+    color: black;
+    font-size: 1rem; /* Adjusted font size in rem units */
+    text-decoration: none;
+    margin-right: 3rem;
+}
+#logo{
+    display: flex;
+    align-items: center;
+}
+#logo img{
+    height: 60px; /* Adjust as needed */
+    width: auto;
+}
+#bottomdiv{
+    display: flex;
+    justify-content:center;
+    gap: 6%;
+  
+}
+#delhipng , #mumbaipng , #hyderabadpng , #chennaipng{
+   height: 120px;
+   width: 120px;
+}
+#delhi , #mumbai , #hyderabad , #chennai{
+    box-shadow: 0 4px 8px rgba(0, 0, 0 , 0.3);
+    border-radius: 50%;
+    border: none;
+    padding: 65px;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+    position: relative;
+    bottom: 2rem;
+
+}
+#major_cities_div{
+    position: absolute;
+}
+#majorcities{
+   font-size: 50px;
+   margin: 40px;
+
+}
+#footer{
+    height: 10%;
+    background-color:black ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:0px;
+    padding:0px;
+}
+#f_delhi , #f_mumbai , #f_hyderabad , #f_chennai{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    margin: 6%;
+    
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px; /* Rounded corners only on the left side */
+    font-size: 16px;
+    outline: none; /* Removes the outline when focused */
+}
+
+#searchButton {
+    padding: 10px;
+    background-color: #007bff; /* Button color */
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners only on the right side */
+    cursor: pointer;
+}
+
+#searchButton svg {
+    height: 20px; /* Size of the search icon */
+    width: 20px;
+}
+
+#searchButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 767px) {
+    #navbar {
+        display: flex;
+        flex-direction:row;
+        height: auto;
+        padding: 5px;
+        align-items: flex-start;
+    }
+
+    #nav-links {
+        position: relative;
+        right:20px;
+        top:25px;
+    }
+
+    #nav-links a {
+        margin-right: 90px;
+        display: contents;
+       
+    }
+
+    #logo img {
+        height: 55px;
+    }
+
+    #searchbar {
+        width: 60%; /* Make the search bar wider on mobile */
+        max-width: 100%;
+        min-width: unset;
+        bottom: 90%; /* Adjust position for better visibility */
+        transform: translate(-65% , 100% );
+    }
+
+    #bottomdiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Increase gap for better spacing */
+    }
+
+    #delhipng, #mumbaipng, #hyderabadpng, #chennaipng {
+        height: 80px;
+        width: 80px;
+    }
+
+    #delhi, #mumbai, #hyderabad, #chennai {
+        padding: 40px;
+        margin-top: 10%;
+    }
+
+    #majorcities {
+        font-size: 36px;
+        margin: 20px;
+        text-align: center; /* Center-align the text */
+    }
+
+    #footer {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center; /* Center-align footer links */
+    }
+
+    #f_delhi, #f_mumbai, #f_hyderabad, #f_chennai {
+        margin: 10px 0;
+        font-size: medium;
+    }
+}
+
+
+
+
+/* Pop-up background */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1001; /* Ensure it appears above other content */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Pop-up content */
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
